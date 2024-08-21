@@ -17,7 +17,8 @@ public class Post {
     public String getContent() {
         return content;
     }
-    public void setContent(String content) {
+    public boolean setContent() {
         this.content = content;
+        return false;
     }
 }

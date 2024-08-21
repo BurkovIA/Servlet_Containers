@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.Reader;
 
 public class PostController {
-    public static final String APPLICATION_JSON = "application/json";
+    private static final String APPLICATION_JSON = "application/json";
     private final PostService service;
     public PostController(PostService service) {
         this.service = service;
@@ -19,8 +19,18 @@ public class PostController {
         response.getWriter().print(gson.toJson(data));
     }
 
-    public void getById(long id, HttpServletResponse response) {
-        // TODO: deserialize request & serialize response
+    public void getById(long id, HttpServletResponse response) throws IOException {
+        response.setContentType(APPLICATION_JSON);
+        final var optionalPost = service.getById(id);
+        final var gson = new Gson();
+
+        if (optionalPost.setContent()) {
+            response.setStatus(HttpServletResponse.SC_OK);
+            response.getWriter().print(gson.toJson(optionalPost.getId()));
+        } else {
+            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            response.getWriter().print(gson.toJson("Post not found"));
+        }
     }
     public void save(Reader body, HttpServletResponse response) throws IOException {
         response.setContentType(APPLICATION_JSON);
@@ -29,7 +39,16 @@ public class PostController {
         final var data = service.save(post);
         response.getWriter().print(gson.toJson(data));
     }
-    public void removeById(long id, HttpServletResponse response) {
-        // TODO: deserialize request & serialize response
+    public void removeById(long id, @org.jetbrains.annotations.NotNull HttpServletResponse response) throws IOException {
+        response.setContentType(APPLICATION_JSON);
+        boolean isRemoved = service.removeById(id);
+        final var gson = new Gson();
+
+        if (isRemoved) {
+            response.setStatus(HttpServletResponse.SC_NO_CONTENT);
+        } else {
+            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            response.getWriter().print(gson.toJson("Post not found"));
+        }
     }
 }

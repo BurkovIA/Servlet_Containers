@@ -1,42 +1,33 @@
 package org.example.repository;
+
 import org.example.model.Post;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicLong;
 
-// Stub
 public class PostRepository {
-    private List<Post> posts = new ArrayList<>();
-    private long postIdCounter = 1;
-    public synchronized List<Post> all() {
-        return Collections.unmodifiableList(posts);
+    private final ConcurrentHashMap<Long, Post> posts = new ConcurrentHashMap<>();
+    private final AtomicLong postIdCounter = new AtomicLong(1);
+
+    public List<Post> all() {
+        return List.copyOf(posts.values());
     }
-    public synchronized Optional<Post> getById(long id) {
-        return posts.stream()
-                .filter(post -> post.getId() == id)
-                .findFirst();
+
+    public Optional<Post> getById(long id) {
+        return Optional.ofNullable(posts.get(id));
     }
-    public synchronized Post save(Post post) {
+
+    public Post save(Post post) {
         if (post.getId() == 0) {
-            post.setId(postIdCounter++);
-            posts.add(post);
-        } else {
-            int index = -1;
-            for (int i = 0; i < posts.size(); i++) {
-                if (posts.get(i).getId() == post.getId()) {
-                    index = i;
-                    break;
-                }
-            }
-            if (index != -1) {
-                posts.set(index, post);
-            } else {posts.add(post);
-            }
+            long newId = postIdCounter.getAndIncrement();
+            post.setId(newId);
         }
+        posts.put(post.getId(), post);
         return post;
     }
-    public synchronized void removeById(long id) {
-        posts.removeIf(post -> post.getId() == id);
+
+    public void removeById(long id) {
+        posts.remove(id);
     }
 }

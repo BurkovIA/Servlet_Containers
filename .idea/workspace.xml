@@ -4,20 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2cde34a-759c-4be0-9249-7e3103968f64" name="Changes" comment="">
+    <list default="true" id="e2cde34a-759c-4be0-9249-7e3103968f64" name="Changes" comment="add">
       <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/PostController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exception/NotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Post.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/repository/PostRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/PostService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/servlet/MainServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repository/PostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/MainServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/servlet/MainServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +30,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "BurkovIA"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/BurkovIA/Servlet_Containers.git",
+    "accountId": "1a07f402-715c-45d0-b543-d1310f9e9294"
+  }
+}]]></component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -57,6 +64,7 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Smart Tomcat.Smart Tomcat.executor": "Run",
+    "Smart Tomcat.TomCat.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/User/IdeaProjects/Servlet_Containers/src/main/webapp/WEB-INF",
@@ -83,24 +91,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Smart Tomcat" type="com.poratu.idea.plugins.tomcat" singleton="false">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <module name="Servlet_Containers" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TomCat" type="com.poratu.idea.plugins.tomcat">
       <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
       <predefined_log_file enabled="true" id="Tomcat Access Log" />
       <predefined_log_file id="Tomcat Catalina Log" />
       <predefined_log_file id="Tomcat Manager Log" />
       <predefined_log_file id="Tomcat Host Manager Log" />
-      <option name="catalinaBase" value="C:\Program Files\apache-tomcat-10.1.26" />
+      <option name="catalinaBase" value="C:\Users\User\.SmartTomcat\Servlet_Containers\Servlet_Containers" />
       <option name="contextPath" value="/" />
-      <option name="docBase" value="C:\Users\User\IdeaProjects\Servlet_Containers\src\main\java\org\example" />
+      <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
       <option name="envOptions">
         <map />
       </option>
       <option name="extraClassPath" value="" />
       <option name="tomcatInfo">
         <TomcatInfo>
-          <option name="name" value="Apache Tomcat/10.1.26" />
-          <option name="path" value="$PROJECT_DIR$/../../../../Program Files/apache-tomcat-10.1.26" />
-          <option name="version" value="10.1.26.0" />
+          <option name="name" value="Apache Tomcat/9.0.93 (2)" />
+          <option name="path" value="$PROJECT_DIR$/../../../../Program Files/apache-tomcat-9.0.93/apache-tomcat-9.0.93" />
+          <option name="version" value="9.0.93.0" />
         </TomcatInfo>
       </option>
       <option name="vmOptions" value="" />
@@ -120,8 +134,9 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Unnamed" />
       <item itemvalue="Application.Main" />
-      <item itemvalue="Smart Tomcat.Smart Tomcat" />
+      <item itemvalue="Smart Tomcat.TomCat" />
     </list>
     <recent_temporary>
       <list>
@@ -138,6 +153,20 @@
       <option name="presentableId" value="Default" />
       <updated>1722637053536</updated>
     </task>
+    <task id="LOCAL-00001" summary="add">
+      <option name="closed" value="true" />
+      <created>1723388557554</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1723388557560</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add" />
+    <option name="LAST_COMMIT_MESSAGE" value="add" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
 </project>
