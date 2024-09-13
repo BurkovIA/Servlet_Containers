@@ -1,4 +1,4 @@
-package org.example.feature;
+package org.example.config;
 
 import org.example.controller.PostController;
 import org.example.repository.PostRepository;
