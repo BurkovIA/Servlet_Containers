@@ -1,7 +1,6 @@
 package org.example.servlet;
-import org.example.config.AppConfig;
 import org.example.controller.PostController;
-import org.example.config.JavaConfig;
+
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,17 +21,17 @@ public class MainServlet extends HttpServlet {
     private static final String DELETE_METHOD = "DELETE";
 
     private PostController controller;
-    @Override
-    public void init() {
-        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-        controller = context.getBean(PostController.class);
-    }
 //    @Override
 //    public void init() {
-//        final var repository = new PostRepository();
-//        final var service = new PostService(repository);
-//        controller = new PostController(service);
+//        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+//        controller = context.getBean(PostController.class);
 //    }
+    @Override
+    public void init() {
+        final var repository = new PostRepository();
+        final var service = new PostService(repository);
+        controller = new PostController(service);
+    }
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) {
         try {
