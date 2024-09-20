@@ -1,11 +1,9 @@
 package org.example.servlet;
+import org.example.config.AppConfig;
 import org.example.controller.PostController;
-
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.example.feature.AppConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
