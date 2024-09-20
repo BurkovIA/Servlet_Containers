@@ -1,9 +1,7 @@
 package org.example.servlet;
 import org.example.controller.PostController;
-import org.example.feature.AppConfig;
 import org.example.feature.JavaConfig;
-import org.example.repository.PostRepository;
-import org.example.service.PostService;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
